@@ -42,6 +42,6 @@ document
  * Development code. to toggle off certain parts.
  */
 
-const SKIP_LOGIN = true;
+const SKIP_LOGIN = false;
 if (SKIP_LOGIN)
 	document.querySelector("#login-form")?.dispatchEvent(new Event("submit"));
