@@ -1,0 +1,27 @@
+body {
+	height: 100dvh;
+	width: 100dvw;
+	overflow: hidden;
+	background-image: url(/assets/images/wallpaper.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	font-size: 16px;
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	font-family: sans-serif;
+	position: relative;
+}
+
+body:has(app-window.moving) {
+	-webkit-user-select: none;
+	user-select: none;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
