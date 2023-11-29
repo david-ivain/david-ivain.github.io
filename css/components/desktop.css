@@ -1,0 +1,11 @@
+.desktop {
+	position: absolute;
+	inset: 0;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+
+.desktop__explorer {
+	flex-grow: 1;
+}
