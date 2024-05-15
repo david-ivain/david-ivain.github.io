@@ -5,7 +5,9 @@ app-window {
 	flex-direction: column;
 	background-color: white;
 	border-radius: 16px;
-	box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.25);
+	box-shadow:
+		0px 0px 2px rgba(0, 0, 0, 0.44),
+		0px 22px 70px 4px rgba(0, 0, 0, 0.56);
 	position: absolute;
 	left: calc(50% - 400px);
 	top: calc(50% - 300px);
@@ -21,7 +23,6 @@ app-window.maximized {
 	inset: 0 !important;
 	width: 100%;
 	height: 100%;
-	/* z-index: 30; */
 	border-radius: 0;
 }
 
@@ -31,8 +32,9 @@ app-window.minimized {
 
 .window__handle {
 	display: flex;
-	border-bottom: 1px solid rgba(0, 0, 0, 0.25);
-	gap: 8px;
+	background-color: #5da6da;
+	color: #fff;
+	box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.44);
 	align-items: center;
 	cursor: default;
 	-webkit-user-select: none;
@@ -41,15 +43,14 @@ app-window.minimized {
 
 .window__controls {
 	display: flex;
-	gap: 4px;
-	padding: 8px 0 8px 16px;
+	gap: 16px;
+	padding: 16px 24px;
 }
 
 .window__control {
 	width: 16px;
+	min-width: 16px;
 	height: 16px;
-	/* border-radius: 50%; */
-	/* border: 1px solid rgba(0, 0, 0, 0.25); */
 	background-color: transparent;
 	border: none;
 	margin: 0;
@@ -63,27 +64,18 @@ app-window.minimized {
 }
 
 .window__control[data-variant="close"] {
-	/* background-color: red; */
-}
-.window__control[data-variant="close"]::before {
-	content: "×";
-	display: block;
+	background-image: url(/assets/images/close.svg);
+	background-size: cover;
 }
 
 .window__control[data-variant="minimize"] {
-	/* background-color: yellow; */
-}
-.window__control[data-variant="minimize"]::before {
-	content: "-";
-	display: block;
+	background-image: url(/assets/images/minimize.svg);
+	background-size: cover;
 }
 
 .window__control[data-variant="maximize"] {
-	/* background-color: green; */
-}
-.window__control[data-variant="maximize"]::before {
-	content: "+";
-	display: block;
+	background-image: url(/assets/images/maximize.svg);
+	background-size: cover;
 }
 
 .window__control > span {
@@ -97,11 +89,42 @@ app-window.minimized {
 
 .window__title {
 	flex-grow: 1;
-	text-align: center;
-	padding: 8px 16px 8px 0px;
+	text-align: left;
+	font-size: 20px;
+	padding: 16px 24px;
 }
 
 .window__content {
 	overflow: auto;
 	flex-grow: 1;
+	padding: 24px;
+}
+
+.window__content h1,
+.window__content h2,
+.window__content h3,
+.window__content h4,
+.window__content h5,
+.window__content h6 {
+	margin-block: 24px;
+	text-transform: uppercase;
+}
+
+.window__content h2 {
+	margin-top: 0;
+	font-size: 24px;
+	font-weight: 700;
+}
+
+.window__content h3 {
+	font-size: 20px;
+	font-weight: 550;
+}
+
+.window__content p {
+	margin-block: 12px;
+}
+
+.window__content > :last-child {
+	margin-bottom: 0;
 }

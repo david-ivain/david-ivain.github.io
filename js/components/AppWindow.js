@@ -16,27 +16,27 @@ export default class AppWindow extends HTMLElement {
 	connectedCallback() {
 		this.innerHTML = `
 			<div class="window__handle">
+				<div class="window__title">${this.getAttribute("window-title")}</div>
 				<div class="window__controls">
+					<button
+					type="button"
+					class="window__control"
+					data-variant="minimize">
+						<span>Minimize</span>
+					</button>
+					<button
+					type="button"
+					class="window__control"
+					data-variant="maximize">
+						<span>Maximize</span>
+					</button>
 					<button
 						type="button"
 						class="window__control"
 						data-variant="close">
 						<span>close</span>
 					</button>
-					<button
-						type="button"
-						class="window__control"
-						data-variant="minimize">
-						<span>Minimize</span>
-					</button>
-					<button
-						type="button"
-						class="window__control"
-						data-variant="maximize">
-						<span>Maximize</span>
-					</button>
 				</div>
-				<div class="window__title">${this.getAttribute("window-title")}</div>
 			</div>
 			<div class="window__content">
 				${this.innerHTML}

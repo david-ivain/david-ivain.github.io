@@ -11,7 +11,7 @@ export default class AppIcon extends HTMLElement {
 					src="${this.getAttribute("icon")}"
 					alt="${this.innerText}"
 					class="app__icon"
-					width="72px" height="72px">
+					width="48px" height="48px">
 			</button>
 			<label class="app__label fs-sm">${this.innerHTML}</label>
 		</div>
