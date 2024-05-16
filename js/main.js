@@ -20,6 +20,15 @@ document.querySelector("#login-form")?.addEventListener("submit", (event) => {
 	document.querySelector(".desktop")?.classList.remove("deleted");
 });
 
+document.addEventListener("click", (event) => {
+	if (
+		!event.target.closest(".start-menu") &&
+		!event.target.closest("app-icon:not([app])")
+	) {
+		document.querySelector(".start-menu").classList.remove("visible");
+	}
+});
+
 /**
  * The following is done not to bother the user with unwanted password manager
  * prompts.

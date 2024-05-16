@@ -32,17 +32,51 @@
 			<div class="desktop__windows"></div>
 			<div class="desktop__explorer explorer"></div>
 			<div class="desktop__dock dock">
-				<app-icon
-					icon="/assets/images/menu.svg"
-					app="/templates/apps/doudoune.html"
-					>Menu</app-icon
-				>
+				<app-icon icon="/assets/images/menu.svg">Menu</app-icon>
 				<div class="dock__separator"></div>
 				<app-icon
 					icon="/assets/images/package.svg"
 					app="/templates/apps/doudoune.html"
 					>Doudoune</app-icon
 				>
+				<app-icon
+					icon="/assets/images/play.svg"
+					app="/templates/apps/pong.html"
+					>Pong</app-icon
+				>
+			</div>
+			<div class="desktop__start-menu start-menu">
+				<div class="start-menu__search">
+					<img
+						src="/assets/images/search.svg"
+						alt="search"
+						class="start-menu__search-icon"
+						width="20px"
+						height="20px"
+					/>
+					<input
+						type="text"
+						name="search-query"
+						id="start-search-bar"
+						class="start-menu__search-bar"
+						autocomplete="off"
+						autocapitalize="off"
+						placeholder="Type here to search for apps"
+					/>
+				</div>
+				<div class="start-menu__label">Apps</div>
+				<div class="start-menu__apps">
+					<app-icon
+						icon="/assets/images/package.svg"
+						app="/templates/apps/doudoune.html"
+						>Doudoune</app-icon
+					>
+					<app-icon
+						icon="/assets/images/play.svg"
+						app="/templates/apps/pong.html"
+						>Pong</app-icon
+					>
+				</div>
 			</div>
 		</div>
 	</body>

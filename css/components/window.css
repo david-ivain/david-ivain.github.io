@@ -97,6 +97,9 @@ app-window.minimized {
 .window__content {
 	overflow: auto;
 	flex-grow: 1;
+}
+
+.window__padded-content {
 	padding: 24px;
 }
 

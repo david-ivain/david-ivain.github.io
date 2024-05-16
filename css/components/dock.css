@@ -12,7 +12,6 @@
 
 .dock {
 	background-color: rgba(255, 255, 255, 0.5);
-	border: 1px solid rgba(0, 0, 0, 0.25);
 	padding: 12px;
 	align-self: flex-start;
 	margin-bottom: 8px;
@@ -20,7 +19,7 @@
 	border-radius: 1000px;
 	display: flex;
 	align-items: center;
-	gap: 16px;
+	gap: 12px;
 	position: relative;
 	z-index: 20;
 	-webkit-backdrop-filter: blur(32px);
@@ -50,10 +49,9 @@
 	border: none;
 	margin: 0;
 	display: block;
-	background: #fff;
 	border-radius: 50%;
-	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
-	padding: 12px;
+	background: transparent;
+	padding: 0;
 }
 
 .app__button:not(:active) {
@@ -63,6 +61,9 @@
 .app__icon {
 	border-radius: 50%;
 	display: block;
+	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+	padding: 12px;
+	background: #fff;
 }
 
 .app__label {
@@ -83,6 +84,6 @@
 	box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.25);
 }
 
-.app__button:hover + .app__label {
+.app__button:hover > .app__label {
 	opacity: 1;
 }

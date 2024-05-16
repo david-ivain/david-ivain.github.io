@@ -11,15 +11,17 @@ export default class AppIcon extends HTMLElement {
 					src="${this.getAttribute("icon")}"
 					alt="${this.innerText}"
 					class="app__icon"
-					width="48px" height="48px">
+					width="72px" height="72px">
+					<label class="app__label fs-sm">${this.innerHTML}</label>
 			</button>
-			<label class="app__label fs-sm">${this.innerHTML}</label>
 		</div>
 		`;
 
 		this.querySelector(".app__button")?.addEventListener("click", () => {
 			if (!this.getAttribute("app")) {
-				console.error("[ERROR] unset app for icon " + this.innerText);
+				document
+					.querySelector(".start-menu")
+					.classList.toggle("visible");
 				return;
 			}
 			const $alreadyOpenedWindow = document.querySelector(

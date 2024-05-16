@@ -1,0 +1,103 @@
+.start-menu {
+	display: none;
+	position: fixed;
+	bottom: 112px;
+	left: 8px;
+	height: 480px;
+	width: 360px;
+	background-color: rgba(255, 255, 255, 0.5);
+	z-index: 19;
+	-webkit-backdrop-filter: blur(32px);
+	backdrop-filter: blur(32px);
+	box-shadow:
+		0px 0px 2px rgba(0, 0, 0, 0.44),
+		0px 22px 70px 4px rgba(0, 0, 0, 0.56);
+	border-radius: 16px;
+	padding: 24px;
+	flex-direction: column;
+	gap: 24px;
+}
+
+.start-menu.visible {
+	display: flex;
+	animation: slide-in 0.2s ease-out;
+}
+
+.start-menu__search {
+	display: flex;
+	align-items: center;
+	height: 32px;
+	width: 100%;
+	border-radius: 1000px;
+	background-color: rgba(255, 255, 255, 0.5);
+}
+
+.start-menu__search-icon {
+	margin-left: 6px;
+}
+
+.start-menu__search-bar {
+	background-color: transparent;
+	border: none;
+	height: 100%;
+	flex-grow: 1;
+	font-size: 16px;
+	padding: 0 12px 0 6px;
+	border-radius: 0 1000px 1000px 0;
+}
+
+.start-menu__search-bar:focus {
+	outline: none;
+}
+
+.start-menu__search-bar:-internal-autofill-selected {
+	background-color: transparent !important;
+}
+
+.start-menu__label {
+	font-size: 20px;
+}
+
+.start-menu__apps {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+}
+
+.start-menu .app__button:not(:active) {
+	animation: none;
+}
+
+.start-menu .app__label {
+	opacity: 1;
+	position: static;
+	background: transparent;
+	border: none;
+	box-shadow: none;
+	-webkit-backdrop-filter: none;
+	backdrop-filter: none;
+	translate: none;
+	padding: 0;
+}
+
+.start-menu .app__button {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+}
+.start-menu .app__icon {
+	padding: 8px;
+	width: 40px;
+	height: 40px;
+}
+
+@keyframes slide-in {
+	0% {
+		opacity: 0;
+		transform: translateY(50px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0px);
+	}
+}
